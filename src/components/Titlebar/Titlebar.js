@@ -1,6 +1,7 @@
 import React from 'react';
 import { ReactComponent as Discord } from "./Discord.svg";
 import "./Titlebar.css";
+
 const electron = window.require("electron");
 
 class Titlebar extends React.Component {

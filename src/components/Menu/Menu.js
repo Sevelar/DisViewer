@@ -1,26 +1,72 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './Menu.css';
 const electron = window.require("electron");
 
 class Menu extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            dropdownVisible: false,
-            focus: false
-        };
-        this.handleDropdown = this.handleDropdown.bind(this);
+    propTypes = {
+        isMenuBarDescendant : PropTypes.func.isRequired,
+        menuBarEvents       : PropTypes.object.isRequired,
+        onSelect            : PropTypes.func.isRequired
     }
-    handleDropdown(e) {
-        if (e.target.className.indexOf("menu-content") === -1) {
-            this.setState({dropdownVisible: e.target.id, focus: "true"});
-        }
-    }
+
     render() {
         return(
             <div className="menu-bar">
                 <ul className="menu-controls">
-                    <li className="menu-button"id="file" onClick={this.handleDropdown} style={{backgroundColor: this.state.focus ? "rgb(255,255,255,0.2)" : "transparent"}}>File
+                    {React.Children.map(this.props.children, this.renderChild)}
+                </ul>
+            </div>
+        );
+    };
+
+    renderChild(child) {
+        return React.cloneElement(child, {
+            isMenuBarDescendant : this.props.isMenuBarDescendant,
+            menuBarEvents : this.props.menuBarEvents,
+            onSelect : this.props.onSelect
+        })
+    }
+
+    /*constructor() {
+        super();
+        this.container = React.createRef(); // Creating a ref
+        this.state = {
+            dropdownVisible: false,
+        };
+        this.handleClick = this.handleClick.bind(this); // Binding a click handler
+        this.handleHover = this.handleHover.bind(this);
+    }
+    componentDidMount() {
+        document.addEventListener("mousedown", this.handleClickOutside); // Adding an event
+    }
+    componentWillUnmount() {
+        document.removeEventListener("mousedown", this.handleClickOutside); // Removing an event
+    }
+    handleClickOutside = event => {
+        if(this.container.current && !this.container.current.contains(event.target)) { // If container exists or contains event's target
+            this.setState({
+                dropdownVisible: false
+            })
+        }
+    }
+    handleClick(e) {
+        if (e.target.className.indexOf("menu-content") === -1) { // If event target has no value
+            this.setState({dropdownVisible: e.target.id});
+        }
+        
+    }
+    handleHover(e) {
+        /*if (this.state.dropdownVisible !== false) {
+            this.setState({dropdownVisible: e.target.id});
+        }
+    }*/
+    /*render() {
+        return(
+            <div className="menu-bar">
+                <ul className="menu-controls">
+                    <li className="menu-button" id="file" onClick={this.handleClick} onMouseOver={this.handleHover} ref={this.container}>File
                     {this.state.dropdownVisible === "file" && 
                         <ul className="menu-content">
                             <li>New File
@@ -44,7 +90,7 @@ class Menu extends React.Component {
                         </ul>
                     }
                     </li>
-                    <li className="menu-button" id="edit" onClick={this.handleDropdown}>Edit
+                    <li className="menu-button" id="edit" onClick={this.handleClick} onMouseOver={this.handleHover} ref={this.container}>Edit
                     {this.state.dropdownVisible === "edit" && 
                         <ul className="menu-content" style={{left: "45px"}}>
                             <li>Undo
@@ -66,14 +112,14 @@ class Menu extends React.Component {
                         </ul>
                     }
                     </li>
-                    <li className="menu-button" id="view" onClick={this.handleDropdown}>View
+                    <li className="menu-button" id="view" onClick={this.handleDropdown} ref={this.container}>View
                     {this.state.dropdownVisible === "view" && 
                         <ul className="menu-content" style={{left: "90px"}}>
                             <li>Blank</li>
                         </ul>
                     }
                     </li>
-                    <li className="menu-button" id="help" onClick={this.handleDropdown}>Help
+                    <li className="menu-button" id="help" onClick={this.handleDropdown} ref={this.container}>Help
                     {this.state.dropdownVisible === "help" &&
                         <ul className="menu-content" style={{left: "135px"}}>
                             <li>Release Notes</li>
@@ -90,7 +136,7 @@ class Menu extends React.Component {
                 <div className="menu-blank"/>
             </div>
         )
-    }
+    }*/
 }
 
 export default Menu;

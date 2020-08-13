@@ -1,16 +1,33 @@
 <img src="internals/img/disview-banner.png" width="100%" />
 
 <p>
-  Introducing: DisViewer! The live-preview text editor styled in fashioned Discord theme! This application uses frameworks like <a href="https://electron.atom.io/">Electron</a> and <a href="https://facebook.github.io/react/">React!</a> It shares a lot of functionality with its older predecessor, <a href="https://github.com/Sevelar/Discord-Previewer/">Discord Previewer.</a> 
+  Introducing: DisViewer! The live-preview text editor styled in fashioned Discord theme! This application uses frameworks like <a href="https://electron.atom.io/">Electron</a> and <a href="https://facebook.github.io/react/">React!</a> It shares a lot of functionality from its older predecessor, <a href="https://github.com/Sevelar/Discord-Previewer/">Discord Previewer.</a> 
 
-This project is meant to be a continuation of an older project focusing on creating a live-preview DC Markdown text editor. The old project will receive its final updates soon, focusing on bug-fixing and maintaining decent security measures.
+This project is meant to be a part of the project focusing on creating a live-preview DC Markdown text editor, styled by Discord theme and Markdown styling. The old project will receive its final updates in near future, focusing on bug-fixing, maintaining decent security measures and eventually closing the first phase of the project.
 </p>
 
 <hr>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## ⚙️ Install and Run
+
+1. Clone the repository via Git and install all required dependencies:
+```bash
+git clone https://github.com/Sevelar/DisViewer.git your-project-name
+cd your-project-name
+npm install
+```
+
+2. Once it's done, run the required scripts to get the application up and running:
+```bash
+npm start
+npm electron
+```
+
+This should open a new Electron instance with the application ready to go.
+
+## 🔧 Available Scripts
 
 In the project directory, you can run:
 
@@ -22,36 +39,22 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm electron`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Opens the new Electron instance.<br />
+Once you run the application in development mode, you can use this script in order to create an Electron instance to debug your code.<br />
+<br />
+Since this application was meant to be opened with Electron in mind, you'll need this script in order to successfully run the application.
 
-### `npm run build`
+### Remaining Scripts
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can find the list of remaining scripts in the [Create React App documentation](https://create-react-app.dev/docs/available-scripts).
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## 📝 Learn More
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If you are just getting started with React just like me, you should check [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started) and [React documentation](https://reactjs.org/).
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Other than that, you can check the sections below to learn how Create React App works! 👇
 
 ### Code Splitting
 

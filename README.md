@@ -1,3 +1,13 @@
+<img src="internals/img/disview-banner.png" width="100%" />
+
+<p>
+  Introducing: DisViewer! The live-preview text editor styled in fashioned Discord theme! This application uses frameworks like <a href="https://electron.atom.io/">Electron</a> and <a href="https://facebook.github.io/react/">React!</a> It shares a lot of functionality with its older predecessor, <a href="https://github.com/Sevelar/Discord-Previewer/">Discord Previewer.</a> 
+
+This project is meant to be a continuation of an older project focusing on creating a live-preview DC Markdown text editor. The old project will receive its final updates soon, focusing on bug-fixing and maintaining decent security measures.
+</p>
+
+<hr>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

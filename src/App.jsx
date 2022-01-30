@@ -5,7 +5,8 @@ import Menu from "./components/Menu/Menu";
 export default function App() {
   return (
     <>
-      <Titlebar />
+      {window.electronAPI && <Titlebar />}
+      {/*window.electronAPI && <Menu />*/}
       <Menu />
       <Main />
     </>

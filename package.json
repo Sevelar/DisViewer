@@ -2,7 +2,6 @@
   "name": "disviewer",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "main": "main.js",
   "dependencies": {
     "react": "^17.0.2",

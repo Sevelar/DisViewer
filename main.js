@@ -1,5 +1,5 @@
-import { app, BrowserWindow, ipcMain } from "electron";
-import path from "path";
+const { app, BrowserWindow, ipcMain } = require("electron");
+const path = require("path");
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -8,9 +8,9 @@ function createWindow() {
     minWidth: 960,
     minHeight: 540,
     frame: false,
-    icon: path.join(import.meta.url, "public/icon.ico"),
+    icon: path.join(__dirname, "public/icon.ico"),
     webPreferences: {
-      preload: path.join(import.meta.url, "preload.js"),
+      preload: path.join(__dirname, "preload.js"),
     },
   });
 
@@ -21,15 +21,15 @@ function createWindow() {
     mainWindow.webContents.openDevTools();
   }
 
-  ipcMain.on("minimize", () => mainWindow.minimize());
-  ipcMain.on("maximize", () => {
+  ipcMain.handle("minimize", () => mainWindow.minimize());
+  ipcMain.handle("maximize", () => {
     if (!mainWindow.isMaximized()) {
       mainWindow.maximize();
     } else {
       mainWindow.unmaximize();
     }
   });
-  ipcMain.on("close", () => mainWindow.close());
+  ipcMain.handle("close", () => mainWindow.close());
 }
 
 app.whenReady().then(() => {

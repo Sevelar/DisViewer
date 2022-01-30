@@ -12,6 +12,7 @@ export default function Menu() {
 
   function giveContext(value) {
     if (!active) setActive(true);
+    else setActive(false);
     setContext(value);
   }
 
@@ -19,28 +20,28 @@ export default function Menu() {
     <div className="menu-bar">
       <ul className="menu-controls">
         <MenuElement
-          onClick={() => !active && giveContext(1)}
+          onClick={() => (active ? giveContext(0) : giveContext(1))}
           onHover={() => active && setContext(1)}
         >
           File
           {context === 1 && <FileComponent />}
         </MenuElement>
         <MenuElement
-          onClick={() => !active && giveContext(2)}
+          onClick={() => (active ? giveContext(0) : giveContext(2))}
           onHover={() => active && setContext(2)}
         >
           Edit
           {context === 2 && <EditComponent />}
         </MenuElement>
         <MenuElement
-          onClick={() => !active && giveContext(3)}
+          onClick={() => (active ? giveContext(0) : giveContext(3))}
           onHover={() => active && setContext(3)}
         >
           View
           {context === 3 && <ViewComponent />}
         </MenuElement>
         <MenuElement
-          onClick={() => !active && giveContext(4)}
+          onClick={() => (active ? giveContext(0) : giveContext(4))}
           onHover={() => active && setContext(4)}
         >
           Help

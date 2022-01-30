@@ -1,8 +1,8 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, ipcMain } from "electron";
 import path from "path";
 
 function createWindow() {
-  const window = new BrowserWindow({
+  const mainWindow = new BrowserWindow({
     width: 1280,
     height: 720,
     minWidth: 960,
@@ -15,11 +15,21 @@ function createWindow() {
   });
 
   if (process.env.NODE === "production") {
-    window.loadFile("dist/index.html");
+    mainWindow.loadFile("dist/index.html");
   } else {
-    window.loadURL("http://localhost:3000");
+    mainWindow.loadURL("http://localhost:3000");
     mainWindow.webContents.openDevTools();
   }
+
+  ipcMain.on("minimize", () => mainWindow.minimize());
+  ipcMain.on("maximize", () => {
+    if (!mainWindow.isMaximized()) {
+      mainWindow.maximize();
+    } else {
+      mainWindow.unmaximize();
+    }
+  });
+  ipcMain.on("close", () => mainWindow.close());
 }
 
 app.whenReady().then(() => {

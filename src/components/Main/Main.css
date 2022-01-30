@@ -1,50 +1,48 @@
-@import "../../reset.css";
-
 @font-face {
-    font-family: "Whitney Medium";
-    src : url("../../fonts/WhitneyMedium.ttf") format("truetype");
+  font-family: "Whitney Medium";
+  src: url("../../fonts/WhitneyMedium.ttf") format("truetype");
 }
 
 @keyframes floating {
-    0% {
-        transform: translatey(0px);
-    }
-    50% {
-        transform: translatey(-20px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .main {
-    text-align: center;
-    font-family: "Whitney Medium";
-    z-index: 0;
+  text-align: center;
+  font-family: "Whitney Medium";
+  z-index: 0;
 }
 
 .mainHeader {
-    background-color: #678bce;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  background-color: #678bce;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .logo {
-    height: 35vmin;
-    pointer-events: none;
-    transform: translateY(0px);
-    animation: floating 3s ease-in-out infinite;
+  height: 35vmin;
+  pointer-events: none;
+  transform: translateY(0px);
+  animation: floating 3s ease-in-out infinite;
 }
 
 .link {
-    color: #61dafb;
+  color: #61dafb;
 }
 
 p {
-    margin: 20px;
+  margin: 20px;
 }

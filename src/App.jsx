@@ -5,8 +5,12 @@ import Menu from "./components/Menu/Menu";
 export default function App() {
   return (
     <>
-      {window.electronAPI && <Titlebar />}
-      {window.electronAPI && <Menu />}
+      {window.electronAPI && (
+        <div>
+          <Titlebar />
+          <Menu />
+        </div>
+      )}
       <Main />
     </>
   );

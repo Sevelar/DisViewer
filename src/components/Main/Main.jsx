@@ -1,10 +1,15 @@
 import logo from "./logo.png";
-import "./Main.css";
+import TextArea from "./TextArea";
+import PreviewArea from "./PreviewArea";
+//import "./Main.css";
+import "./MainNew.css";
 
 export default function Main() {
   return (
     <div className="main">
-      <header className="mainHeader">
+      <TextArea />
+      <PreviewArea />
+      {/*<header className="mainHeader">
         <img src={logo} className="logo" alt="DisViewer Logo" />
         <p>Everything works just as fine!</p>
         <a
@@ -15,7 +20,7 @@ export default function Main() {
         >
           React Documentation
         </a>
-      </header>
+      </header>*/}
     </div>
   );
 }

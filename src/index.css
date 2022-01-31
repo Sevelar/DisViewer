@@ -1,5 +1,20 @@
+@font-face {
+  font-family: "Whitney";
+  src: url(./fonts/WhitneyMedium.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Whitney";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
 }

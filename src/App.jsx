@@ -6,8 +6,7 @@ export default function App() {
   return (
     <>
       {window.electronAPI && <Titlebar />}
-      {/*window.electronAPI && <Menu />*/}
-      <Menu />
+      {window.electronAPI && <Menu />}
       <Main />
     </>
   );

@@ -1,5 +1,5 @@
 import "../PreviewArea.css";
-import defaultAvatar from "/public/default-avatar.png?import";
+import defaultAvatar from "/default-avatar.png";
 
 export default function Avatar() {
   return (

@@ -79,3 +79,8 @@
   color: #c0c1c3;
   padding-right: 15px;
 }
+
+.preview-message img {
+  max-width: 600px;
+  max-height: 450px;
+}

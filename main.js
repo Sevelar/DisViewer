@@ -14,12 +14,9 @@ function createWindow() {
     },
   });
 
-  if (process.env.NODE === "production") {
-    mainWindow.loadFile("dist/index.html");
-  } else {
-    mainWindow.loadURL("http://localhost:3000");
-    mainWindow.webContents.openDevTools();
-  }
+  //mainWindow.webContents.openDevTools();
+  //mainWindow.loadURL("http://localhost:3000");
+  mainWindow.loadFile("dist/index.html");
 
   ipcMain.handle("minimize", () => mainWindow.minimize());
   ipcMain.handle("maximize", () => {

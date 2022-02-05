@@ -1,7 +1,10 @@
 {
   "name": "disviewer",
-  "version": "0.3.0",
-  "private": true,
+  "description": "Discord-styled Markdown Editor",
+  "homepage": "https://github.com/Sevelar/DisViewer",
+  "license": "MIT",
+  "author": "Sevelar",
+  "version": "0.4.1",
   "main": "main.js",
   "dependencies": {
     "react": "^17.0.2",

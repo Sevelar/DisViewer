@@ -8,15 +8,16 @@ function createWindow() {
     minWidth: 960,
     minHeight: 540,
     frame: false,
-    icon: path.join(__dirname, "public/icon.ico"),
+    icon: path.join(__dirname, "dist/icon.ico"),
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
   });
 
-  //mainWindow.webContents.openDevTools();
-  //mainWindow.loadURL("http://localhost:3000");
   mainWindow.loadFile("dist/index.html");
+
+  // mainWindow.webContents.openDevTools();
+  // mainWindow.loadURL("http://localhost:3000");
 
   ipcMain.handle("minimize", () => mainWindow.minimize());
   ipcMain.handle("maximize", () => {

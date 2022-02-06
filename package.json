@@ -4,7 +4,7 @@
   "homepage": "https://github.com/Sevelar/DisViewer",
   "license": "MIT",
   "author": "Sevelar",
-  "version": "0.4.1",
+  "version": "0.4.3",
   "main": "main.js",
   "dependencies": {
     "react": "^17.0.2",
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.1.4",
+    "electron-builder": "^22.14.5",
     "electron": "^16.0.8",
     "vite": "^2.7.13"
   },
@@ -26,6 +27,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "electron": "electron ."
+    "electron": "electron .",
+    "electron:build": "electron-builder --config electron-builder.json"
   }
 }

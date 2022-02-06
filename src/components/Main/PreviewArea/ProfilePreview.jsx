@@ -1,5 +1,6 @@
 import defaultAvatar from "/default-avatar.png";
 import logo from "/icon-img.png";
+import { version } from "/package.json";
 
 export default function ProfilePreview({ style, time }) {
   return (
@@ -30,7 +31,7 @@ export default function ProfilePreview({ style, time }) {
               <img src={logo} />
             </div>
             <div className="activity-info">
-              <h3>DisViewer (0.4.0)</h3>
+              <h3>DisViewer ({version})</h3>
               <p>
                 Editing Untitled<br></br>
                 {time} elapsed

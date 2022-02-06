@@ -1,0 +1,26 @@
+{
+  "appId": "Sevelar.Disviewer.041",
+  "productName": "DisViewer",
+  "copyright": "Copyright © 2022 Sevelar",
+  "files": ["**/dist/**/*", "*.js", "!vite.config.js"],
+  "asar": true,
+  "win": {
+    "target": [
+      {
+        "target": "portable",
+        "arch": "x64"
+      },
+      {
+        "target": "zip",
+        "arch": "x64"
+      }
+    ],
+    "icon": "dist/icon.ico"
+  },
+  "portable": {
+    "artifactName": "disviewer_portable.exe"
+  },
+  "directories": {
+    "output": "build"
+  }
+}

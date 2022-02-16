@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState, createElement } from "react";
+import { useState, useEffect, createElement, Fragment } from "react";
 import { unified } from "unified";
 import rehypeReact from "rehype-react";
 import remarkParse from "remark-parse";
@@ -7,26 +7,26 @@ import remarkBreaks from "remark-breaks";
 
 import TextArea from "./TextArea";
 import PreviewArea from "./PreviewArea";
-import "./MainNew.css";
+import "./Main.css";
 
 export default function Main() {
-  const [unparsed, setUnparsed] = useState("");
-  const [parsed, setParsed] = useState("");
+  const [input, setInput] = useState("");
+  const [output, setOutput] = useState("");
 
   useEffect(() => {
     unified()
       .use(remarkParse)
       .use(remarkBreaks)
-      .use(remarkRehype) // parse Rehype if toHTML
+      .use(remarkRehype)
       .use(rehypeReact, { createElement, Fragment })
-      .process(unparsed) // can be toHTML with discord-markdown
-      .then((file) => setParsed(file.result));
-  }, [unparsed]);
+      .process(input)
+      .then((file) => setOutput(file.result));
+  }, [input]);
 
   return (
     <div className="main">
-      <TextArea onEdit={(e) => setUnparsed(e.target.value)} edit={unparsed} />
-      <PreviewArea content={parsed} />
+      <TextArea onChange={(e) => setInput(e.target.value)} value={input} />
+      <PreviewArea value={output} />
     </div>
   );
 }

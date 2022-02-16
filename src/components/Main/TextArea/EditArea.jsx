@@ -1,11 +1,11 @@
 import "../TextArea.css";
 
-export default function EditArea({ onEdit, edit }) {
+export default function EditArea({ onChange, value }) {
   return (
     <textarea
       className="text-edit-container"
-      onChange={onEdit}
-      value={edit}
+      onChange={onChange}
+      value={value}
     ></textarea>
   );
 }

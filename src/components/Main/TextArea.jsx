@@ -2,11 +2,11 @@ import "./TextArea.css";
 import EditArea from "./TextArea/EditArea";
 import StyleArea from "./TextArea/StyleArea";
 
-export default function TextArea({ onEdit, edit }) {
+export default function TextArea({ onChange, value }) {
   return (
     <div className="text-container">
       <div className="text-content">
-        <EditArea onEdit={onEdit} edit={edit} />
+        <EditArea onChange={onChange} value={value} />
         <StyleArea />
       </div>
     </div>

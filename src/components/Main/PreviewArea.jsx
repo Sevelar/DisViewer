@@ -56,6 +56,7 @@ export default function PreviewArea({ value }) {
             style={{
               top: avatarRef.current.offsetTop,
               left: `${avatarRef.current.offsetLeft + 54}px`,
+              position: "absolute",
             }}
             refValue={profileRef}
             timeValue={time}

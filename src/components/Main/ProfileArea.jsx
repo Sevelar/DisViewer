@@ -32,7 +32,7 @@ export default function ProfileArea({ onClick }) {
             <div>
               <h2>Preview in this server</h2>
               <ProfilePreview
-                style={{ height: "95%" }}
+                style={{ height: "95%", position: "relative" }}
                 isCounter={false}
               ></ProfilePreview>
             </div>

@@ -4,7 +4,12 @@ import { version } from "/package.json";
 
 import css from "./ProfilePreview.module.css";
 
-export default function ProfilePreview({ style, timeValue, refValue }) {
+export default function ProfilePreview({
+  style,
+  timeValue,
+  refValue,
+  isCounter = true,
+}) {
   return (
     <div className={css.profile} style={style} ref={refValue}>
       <div className={css.profileImg}></div>
@@ -34,10 +39,14 @@ export default function ProfilePreview({ style, timeValue, refValue }) {
             </div>
             <div className={css.activityInfo}>
               <h3>DisViewer ({version})</h3>
-              <p>
-                Editing Untitled<br></br>
-                {timeValue || "00:00"} elapsed
-              </p>
+              {isCounter ? (
+                <p>
+                  Editing Untitled<br></br>
+                  {timeValue || "00:00"} elapsed
+                </p>
+              ) : (
+                <p>DisViewer is fun!</p>
+              )}
             </div>
           </div>
         </div>

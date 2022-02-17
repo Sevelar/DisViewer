@@ -7,11 +7,13 @@ import remarkBreaks from "remark-breaks";
 
 import TextArea from "./TextArea";
 import PreviewArea from "./PreviewArea";
+import ProfileArea from "./ProfileArea";
 import css from "./Main.module.css";
 
 export default function Main() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
+  const [profile, setProfile] = useState(true);
 
   useEffect(() => {
     unified()
@@ -27,6 +29,7 @@ export default function Main() {
     <div className={css.main}>
       <TextArea onChange={(e) => setInput(e.target.value)} value={input} />
       <PreviewArea value={output} />
+      {profile && <ProfileArea onClick={() => setProfile(false)} />}
     </div>
   );
 }

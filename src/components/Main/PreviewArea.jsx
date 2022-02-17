@@ -9,14 +9,20 @@ import css from "./PreviewArea.module.css";
 export default function PreviewArea({ value }) {
   const [activeProfile, setActiveProfile] = useState(false);
   const profileRef = useRef(null);
+  const avatarRef = useRef(null);
 
   const [time, setTime] = useState("");
   let [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
     function handleClickOutside(e) {
-      if (profileRef.current && !profileRef.current.contains(e.target))
+      if (
+        profileRef.current &&
+        !profileRef.current.contains(e.target) &&
+        !avatarRef.current.contains(e.target)
+      ) {
         setActiveProfile(false);
+      }
     }
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -41,12 +47,15 @@ export default function PreviewArea({ value }) {
   return (
     <div className={css.preview}>
       <div className={css.previewWrapper}>
-        <Avatar onClick={() => setActiveProfile(!activeProfile)} />
+        <Avatar
+          onClick={() => setActiveProfile(!activeProfile)}
+          refValue={avatarRef}
+        />
         {activeProfile && (
           <ProfilePreview
             style={{
-              top: 15,
-              left: "calc(50% + 75px)",
+              top: avatarRef.current.offsetTop,
+              left: `${avatarRef.current.offsetLeft + 54}px`,
             }}
             refValue={profileRef}
             timeValue={time}

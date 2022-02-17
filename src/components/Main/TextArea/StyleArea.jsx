@@ -1,12 +1,11 @@
-import "../TextArea.css";
+import css from "../TextArea.module.css";
 
 export default function StyleArea() {
   return (
-    <div className="text-style-container">
+    <div className={css.textStyle}>
       <div>
         <i className="fa-solid fa-bold"></i>
       </div>
-
       <div>
         <i className="fa-solid fa-italic"></i>
       </div>

@@ -7,7 +7,7 @@ import remarkBreaks from "remark-breaks";
 
 import TextArea from "./TextArea";
 import PreviewArea from "./PreviewArea";
-import "./Main.css";
+import css from "./Main.module.css";
 
 export default function Main() {
   const [input, setInput] = useState("");
@@ -24,7 +24,7 @@ export default function Main() {
   }, [input]);
 
   return (
-    <div className="main">
+    <div className={css.main}>
       <TextArea onChange={(e) => setInput(e.target.value)} value={input} />
       <PreviewArea value={output} />
     </div>

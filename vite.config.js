@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import path from "path";
+import postcssNested from "postcss-nested";
 
 export default defineConfig({
   base: "./",
@@ -8,6 +8,9 @@ export default defineConfig({
   css: {
     modules: {
       localsConvention: "camelCaseOnly",
+    },
+    postcss: {
+      plugins: [postcssNested()],
     },
   },
 });

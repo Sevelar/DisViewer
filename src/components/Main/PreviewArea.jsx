@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 
-import "./PreviewArea.css";
 import Avatar from "./PreviewArea/Avatar";
 import Message from "./PreviewArea/Message";
 import Username from "./PreviewArea/Username";
 import ProfilePreview from "./PreviewArea/ProfilePreview";
+import css from "./PreviewArea.module.css";
 
 export default function PreviewArea({ value }) {
   const [activeProfile, setActiveProfile] = useState(false);
@@ -38,13 +38,9 @@ export default function PreviewArea({ value }) {
     return () => clearTimeout(timer);
   }, [time]);
 
-  // function handleClick() {
-  //   if (profileRef !== null)
-  // }
-
   return (
-    <div className="preview-container">
-      <div className="preview-wrapper">
+    <div className={css.preview}>
+      <div className={css.previewWrapper}>
         <Avatar onClick={() => setActiveProfile(!activeProfile)} />
         {activeProfile && (
           <ProfilePreview
@@ -56,7 +52,7 @@ export default function PreviewArea({ value }) {
             timeValue={time}
           />
         )}
-        <div className="preview-content">
+        <div className={css.previewContent}>
           <Username />
           <Message>{value}</Message>
         </div>

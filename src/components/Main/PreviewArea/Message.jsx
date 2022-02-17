@@ -1,3 +1,5 @@
+import css from "../PreviewArea.module.css";
+
 export default function Message({ children }) {
-  return <div className="preview-message">{children}</div>;
+  return <div className={css.previewMessage}>{children}</div>;
 }

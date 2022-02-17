@@ -6,7 +6,7 @@ import css from "./ProfilePreview.module.css";
 
 export default function ProfilePreview({ style, timeValue, refValue }) {
   return (
-    <div className={css.profileBox} style={style} ref={refValue}>
+    <div className={css.profile} style={style} ref={refValue}>
       <div className={css.profileImg}></div>
       <div className={css.profileAvatarBox}>
         <div className={css.profileAvatar}>
@@ -18,7 +18,7 @@ export default function ProfilePreview({ style, timeValue, refValue }) {
       </div>
       <div className={css.profileBody}>
         <hr />
-        <div className={css.aboutMeBox}>
+        <div className={css.aboutMe}>
           <h2>About Me</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas vitae
@@ -26,7 +26,7 @@ export default function ProfilePreview({ style, timeValue, refValue }) {
             tempora sunt blanditiis.
           </p>
         </div>
-        <div className={css.activityBox}>
+        <div className={css.activity}>
           <h2>Playing a game</h2>
           <div className={css.activityBody}>
             <div className={css.activityIcon}>

@@ -14,10 +14,11 @@ function createWindow() {
     },
   });
 
-  mainWindow.loadFile("dist/index.html");
-
-  // mainWindow.webContents.openDevTools();
-  // mainWindow.loadURL("http://localhost:3000");
+  if (process.env.NODE_ENV !== "production") {
+    mainWindow.loadURL("http://localhost:3000");
+  } else {
+    mainWindow.loadFile("dist/index.html");
+  }
 
   ipcMain.handle("minimize", () => mainWindow.minimize());
   ipcMain.handle("maximize", () => {
@@ -41,6 +42,3 @@ app.whenReady().then(() => {
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
 });
-
-// Removes stock Menubar
-// mainWindow.setMenu(null);

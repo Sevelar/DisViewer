@@ -1,5 +1,5 @@
 {
-  "appId": "Sevelar.Disviewer.041",
+  "appId": "Sevelar.Disviewer.100",
   "productName": "DisViewer",
   "copyright": "Copyright © 2022 Sevelar",
   "files": ["**/dist/**/*", "*.js", "!vite.config.js"],

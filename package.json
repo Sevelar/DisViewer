@@ -22,7 +22,7 @@
     "electron": "^18.2.0",
     "electron-builder": "^23.0.3",
     "postcss-nested": "^5.0.6",
-    "vite": "^2.9.8"
+    "vite": "^2.9.13"
   },
   "scripts": {
     "dev:vite": "vite",

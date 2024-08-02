@@ -20,7 +20,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^1.1.4",
     "electron": "^22.3.25",
-    "electron-builder": "^23.0.3",
+    "electron-builder": "^24.13.3",
     "postcss-nested": "^5.0.6",
     "vite": "^2.9.18"
   },

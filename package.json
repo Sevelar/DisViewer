@@ -19,8 +19,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.1.4",
-    "electron": "^18.3.7",
-    "electron-builder": "^23.0.3",
+    "electron": "^31.3.1",
+    "electron-builder": "^23.6.0",
     "postcss-nested": "^5.0.6",
     "vite": "^2.9.18"
   },
